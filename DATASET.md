@@ -2,8 +2,7 @@
 
 Official dataset for [https://arxiv.org/abs/2503.17846](https://arxiv.org/abs/2503.17846).  
 
-<img src="materials/dataset.jpeg" alt="recording_example" width="422"/>  
-<img src="materials/vicon_vis.png" alt="recording_example" width="350"/>  
+<img src="materials/dataset.jpeg" alt="recording_example" width="380"/> <img src="materials/vicon_vis.png" alt="recording_example" width="315"/>  
 
 *Left to right: 1) The recording process demonstrated on one of the ten subjects. The ankleband is connected to the computer via a serial port for data collection, while motion capture stickers are being used to monitor the gestures and label them after session. 2) An illustration of the reconstructed leg of the subject from the motion capture data during the labeling session.*
 
