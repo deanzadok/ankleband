@@ -1,6 +1,7 @@
 # Smart Ankleband for Plug-and-Play Hand-Prosthetic Control
 
 Official code repository for [https://arxiv.org/abs/2503.17846](https://arxiv.org/abs/2503.17846).  
+See our demo in action by watching the video [https://youtu.be/IUvm3WCvYG8](https://youtu.be/IUvm3WCvYG8).  
 
 <img src="materials/demo.gif" alt="robotic_hand_demo" width="900"/>  
 
