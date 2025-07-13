@@ -340,6 +340,11 @@ class DataManagement(object):
     # prepare X and y for sklearn training
     def prepare_matrices(self):
 
+        if not self.cfg.data.dtw:
+            if not self.cfg.data.single_test:
+                self.train_df['input_vec'] = self.train_df['input_vec'].apply(lambda x: x.flatten())
+            self.test_df['input_vec'] = self.test_df['input_vec'].apply(lambda x: x.flatten())
+
         if not self.cfg.data.single_test:
             self.train_X = np.vstack(self.train_df['input_vec'].values)
             self.train_y = self.train_df['label_idx'].values

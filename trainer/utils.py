@@ -10,7 +10,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC
+from sklearn.svm import SVC, LinearSVC
 from sklearn.tree import DecisionTreeClassifier
 import torch
 from torch import nn
@@ -289,13 +289,13 @@ def initiate_model(cfg):
     if cfg.model.classifier == 'lda':
         return LinearDiscriminantAnalysis()
     elif cfg.model.classifier == 'rf':
-        return RandomForestClassifier()
+        return RandomForestClassifier(n_estimators=8, max_depth=8)
     elif cfg.model.classifier == 'dt':
         return DecisionTreeClassifier(max_depth=10)
     elif cfg.model.classifier == 'mlp':
         return MLPClassifier()
     elif cfg.model.classifier == 'svc':
-        return SVC()
+        return LinearSVC()
     elif cfg.model.classifier == 'nb':
         return GaussianNB()
     elif cfg.model.classifier == 'knn':

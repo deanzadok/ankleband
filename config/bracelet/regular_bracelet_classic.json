@@ -19,12 +19,12 @@
         "CLASSES": 5,
         "LABEL_PERCENTAGE": 0.5,
         "LEAVE_SUBJECT_OUT": 1,
-        "DTW": true,
+        "DTW": false,
         "SHUFFLE": false
     },
     "MODEL": {
         "TYPE": "classic",
-        "CLASSIFIER": "lda"
+        "CLASSIFIER": "rf"
     },
     "TRAINING": {
         "BATCH_NUM_WORKERS": 32,
@@ -33,7 +33,7 @@
     "SYSTEM": {
         "GPU": 0
     },
-    "OUTPUT_DIR": "/mnt/walkure_public/deanz/models/bracelet/mar12_dtw_lda_exp/regular_s01_1e",
+    "OUTPUT_DIR": "/mnt/walkure_public/deanz/models/bracelet/jul10_classic_rf_n8d8_exp/regular_s01_1e",
     "RANDOM_SEED": 2,
     "STORE_CSV": false
 }

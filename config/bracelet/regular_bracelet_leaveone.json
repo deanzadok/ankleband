@@ -26,8 +26,8 @@
         "NUM_FC_LAYERS": 2
     },
     "TRAINING": {
-        "BATCH_SIZE": 128,
-        "EPOCHS": 100,
+        "BATCH_SIZE": 64,
+        "EPOCHS": 10,
 		"CP_INTERVAL": 5,
         "LEARNING_RATE": 1e-4,
         "WEIGHT_DECAY": 5e-5,
@@ -36,12 +36,12 @@
         "SCHEDULER_STEPS": 10000000,
         "GRADIENT_CLIP": 1.0,
         "BATCH_NUM_WORKERS": 32,
-        "WEIGHTED_SAMPLING": true
+        "WEIGHTED_SAMPLING": false
     },
     "SYSTEM": {
         "GPU": 0
     },
-    "OUTPUT_DIR": "/mnt/walkure_public/deanz/models/bracelet/feb27_frequency_exp_2fc/regular_s01_100e",
+    "OUTPUT_DIR": "/mnt/walkure_public/deanz/models/bracelet/jul10_nst_exp_c1d_bn_im64_2fc_regsampling_bs64/regular_s01_100e",
     "RANDOM_SEED": 2,
     "STORE_CSV": false
 }

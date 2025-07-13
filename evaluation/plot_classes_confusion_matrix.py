@@ -11,12 +11,12 @@ warnings.filterwarnings('always')  # "error", "ignore", "always", "default", "mo
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-GRAPH_FORMAT = 'pdf'
 FONT_SIZE = 18
 plt.rcParams['pdf.fonttype'] = 42
 plt.rcParams['ps.fonttype'] = 42
 plt.rcParams.update({'font.size': FONT_SIZE})
 plt.rcParams["figure.figsize"] = (5,4)
+GRAPH_FORMAT = 'pdf'
 
 def format_large_numbers(value):
     """formats large numbers with abbreviations (K, M, etc.)."""
@@ -28,8 +28,9 @@ def format_large_numbers(value):
         return str(value)
 
 # load confusion matrices from experiments folders data
-exp_dir = '/mnt/walkure_public/deanz/models/bracelet/feb25_label_percentage_exp_seq2fc'
-exp_files = [f for f in os.listdir(exp_dir) if 'lp0.5' in f] # iterate only over folders with lp 0.5 in their name
+exp_dir = '/mnt/walkure_public/deanz/models/bracelet/jul10_c1d_bn_im64_2fc_regsampling_bs64'
+# exp_files = [f for f in os.listdir(exp_dir) if 'lp0.5' in f] # iterate only over folders with lp 0.5 in their name
+exp_files = [f for f in os.listdir(exp_dir)]
 confusion_matrices_df = []
 for exp_file in exp_files:
     cm_csv_path = os.path.join(exp_dir, exp_file, 'confusion_matrix_classes.csv')

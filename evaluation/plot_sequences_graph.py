@@ -9,22 +9,21 @@ plt.rcParams['pdf.fonttype'] = 42
 plt.rcParams['ps.fonttype'] = 42
 plt.rcParams.update({'font.size': FONT_SIZE})
 plt.rcParams["figure.figsize"] = (5,4)
-GRAPH_FORMAT = 'pdf'
-TARGET_EPOCH = 50
 SENSOR_FREQ = 200
 METRICS_NAMES = ['Accuracy','Recall', 'Precision']
 NUM_METRICS = len(METRICS_NAMES)
 METRICS_SYMBOLS = ['o', '^', 'v']
 COLORS = ['mediumseagreen', 'gold', 'cornflowerblue', 'coral']
+GRAPH_FORMAT = 'pdf'
 
 # load experiments data
-exp_dir = "/mnt/walkure_public/deanz/models/bracelet/feb24_sequence_exp_seq2fc"
+exp_dir = "/mnt/walkure_public/deanz/models/bracelet/jul10_sequence_exp_c1d_bn_im64_2fc_regsampling_bs64"
 exp_files = os.listdir(exp_dir)
 exp_metric_files = {}
 for exp_file in exp_files:
-    csv_path = os.path.join(exp_dir, exp_file, 'metrics_mean_subject.csv')
+    csv_path = os.path.join(exp_dir, exp_file, 'metrics.csv')
     df = pd.read_csv(csv_path)
-    exp_metric_files[exp_file] = df.values[:, 2:]
+    exp_metric_files[exp_file] = df.iloc[-1].values[1:]
 
 # collect all metric values for each sequence length 
 seq_length_metric = {}
@@ -76,7 +75,7 @@ plt.gca().add_artist(metrics_legend)
 plt.xticks(durations, fontsize=FONT_SIZE-6)
 plt.yticks(fontsize=FONT_SIZE-4)
 plt.xlim([durations[0] - 0.025, durations[-1] + 0.025])
-plt.ylim([0.19, 0.99])
+plt.ylim([0.7, 0.99])
 plt.xlabel('Duration of Input Vector [s]')
 plt.ylabel('Score')
 

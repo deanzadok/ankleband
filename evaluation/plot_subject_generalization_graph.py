@@ -9,23 +9,21 @@ plt.rcParams['pdf.fonttype'] = 42
 plt.rcParams['ps.fonttype'] = 42
 plt.rcParams.update({'font.size': FONT_SIZE})
 plt.rcParams["figure.figsize"] = (5,4)
-GRAPH_FORMAT = 'pdf'
-TARGET_EPOCH = 50
-
 METRICS_NAMES = ['Accuracy','Recall', 'Precision']
 NUM_METRICS = len(METRICS_NAMES)
 METRICS_SYMBOLS = ['o', '^', 'v']
 COLORS = ['mediumseagreen', 'gold', 'cornflowerblue', 'coral']
+GRAPH_FORMAT = 'pdf'
 
 # load experiments data
-exp_dir = "/mnt/walkure_public/deanz/models/bracelet/feb26_generalization_exp_2fc"
+exp_dir = "/mnt/walkure_public/deanz/models/bracelet/jul10_nst_exp_c1d_bn_im64_2fc_regsampling_bs64"
 exp_files = os.listdir(exp_dir)
 exp_metric_files = {}
 for exp_file in exp_files:
     nst_value = int(exp_file.split('nst')[-1])
-    csv_path = os.path.join(exp_dir, exp_file, 'metrics_mean_subject.csv')
+    csv_path = os.path.join(exp_dir, exp_file, 'metrics.csv')
     df = pd.read_csv(csv_path)
-    exp_metric_files[exp_file] = df.values[:, 2:]
+    exp_metric_files[exp_file] = df.iloc[-1].values[1:]
 
 # collect all metric values for each sequence length 
 nst_metric = {}

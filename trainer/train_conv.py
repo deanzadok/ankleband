@@ -83,8 +83,9 @@ for epoch in range(cfg.training.epochs):  # loop over the dataset multiple times
     start_time = time.time()
 
     # resample datasets each epoch to avoid class overfitting
-    train_dataset.resample_data()
-    test_dataset.resample_data()
+    if cfg.training.weighted_sampling:
+        train_dataset.resample_data()
+        test_dataset.resample_data()
 
     train_losses, test_losses = [], []
 

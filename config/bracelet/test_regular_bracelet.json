@@ -18,13 +18,13 @@
         "STRIDE": 1,
         "CLASSES": 5,
         "LABEL_PERCENTAGE": 0.5,
-        "LEAVE_SUBJECT_OUT": 1,
+        "LEAVE_SUBJECT_OUT": 4,
         "SINGLE_TEST": true,
         "SHUFFLE": false
     },
     "MODEL": {
         "TYPE": "classifier",
-        "WEIGHTS": "/mnt/walkure_public/deanz/models/bracelet/feb27_frequency_exp_2fc/regular_s01_100e_append120_step1/model_weights_50.pt",
+        "WEIGHTS": "/mnt/walkure_public/deanz/models/bracelet/jul10_c1d_bn_im64_2fc_regsampling_bs64/regular_s04_100e/model_weights_10.pt",
         "NUM_FC_LAYERS": 2
     },
     "TRAINING": {
@@ -34,7 +34,7 @@
     "SYSTEM": {
         "GPU": 0
     },
-    "OUTPUT_DIR": "/mnt/walkure_public/deanz/models/bracelet/feb27_frequency_exp_2fc/regular_s01_100e_append120_step1",
+    "OUTPUT_DIR": "/mnt/walkure_public/deanz/models/bracelet/jul10_c1d_bn_im64_2fc_regsampling_bs64/regular_s04_100e",
     "RANDOM_SEED": 2,
     "STORE_CSV": false
 }
